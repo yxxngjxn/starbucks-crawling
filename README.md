@@ -29,7 +29,6 @@ public class TestController {
     }
 
 }
-
 ```
 ### 3. 실행 방법
 ### 3-1. Spring Boot 서버 실행
