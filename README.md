@@ -39,3 +39,50 @@ public class TestController {
 ```
 http://localhost:8080/test-lambda
 ```
+
+## 📦 Lambda 응답 JSON 구조
+### 1. 구조 설명
+| 필드명                 | 타입     | 설명                                     |
+| ------------------- | ------ | -------------------------------------- |
+| `name`              | String | 음료 이름 (예: "에스프레소", "콜드 브루")            |
+| `image`             | String | 음료 이미지 URL (스타벅스 공식 이미지 주소)            |
+| `beverageType`      | String | 음료 분류 (예: ESPRESSO, Cold\_Brew, TEA 등) |
+| `beverageNutrition` | Object | 영양 정보가 담긴 객체                           |
+| ├ `servingKcal`     | String | 1회 제공량당 열량 (kcal)                      |
+| ├ `saturatedFatG`   | String | 포화지방 (g)                               |
+| ├ `proteinG`        | String | 단백질 (g)                                |
+| ├ `sodiumMg`        | String | 나트륨 (mg)                               |
+| ├ `sugarG`          | String | 당류 (g)                                 |
+| └ `caffeineMg`      | String | 카페인 (mg)                               |
+### 2. 예시 (부분 발췌)
+```
+[
+  {
+    "name": "에스프레소",
+    "image": "https://www.starbucks.co.kr/upload/store/2023/10/[...]",
+    "beverageType": "ESPRESSO",
+    "beverageNutrition": {
+      "servingKcal": "15",
+      "saturatedFatG": "0.1",
+      "proteinG": "0.8",
+      "sodiumMg": "0",
+      "sugarG": "0",
+      "caffeineMg": "75"
+    }
+  },
+  {
+    "name": "콜드 브루",
+    "image": "https://www.starbucks.co.kr/upload/store/2023/09/[...]",
+    "beverageType": "Cold_Brew",
+    "beverageNutrition": {
+      "servingKcal": "5",
+      "saturatedFatG": "0",
+      "proteinG": "0",
+      "sodiumMg": "0",
+      "sugarG": "0",
+      "caffeineMg": "150"
+    }
+  }
+  ...
+]
+```
