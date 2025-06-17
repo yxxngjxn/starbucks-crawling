@@ -33,7 +33,6 @@ for code, beverage_type in urls.items():
 
     for item in data.get("list", []):
         result.append({
-            "productCd": item.get("product_CD"),
             "name": item.get("product_NM"),
             "image": f"https://www.starbucks.co.kr{item.get('file_PATH', '')}",
             "beverageType": beverage_type,
