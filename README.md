@@ -40,6 +40,7 @@ public class TestController {
 http://localhost:8080/test-lambda
 ```
 
+
 ## 📦 Lambda 응답 JSON 구조
 ### 1. 구조 설명
 | 필드명                 | 타입     | 설명                                     |
