@@ -1,12 +1,14 @@
 ## 🚀 Spring Boot에서 AWS Lambda 호출 예시
 #### 함수 URL : https://3x5wbokt4goucp6j5snlsfthla0bqmhx.lambda-url.ap-northeast-2.on.aws/
+#### 함수 URL 2 : https://dla6sbxferlsb2jl6wtmjvmioe0hdmdc.lambda-url.ap-northeast-2.on.aws/
+(AWS 계정에 약간의 문제가 생겨서 첫 번째 주소가 제대로 안 되면 두 번째 주소 사용해 주세요!)
 ### 1. 의존성 추가 (Gradle 기준)
 ```
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-webflux'
 }
 ```
-### 2. WebClient 코드 작성
+### 2. 컨트롤러 작성
 ```
 package com.example.lambdatest;
 
