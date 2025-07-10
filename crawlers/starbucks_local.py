@@ -1,5 +1,6 @@
 import requests
 import json
+from utils import get_beverage_temperature
 
 # JS 파일 주소 목록 (카테고리별)
 urls = {
@@ -49,6 +50,7 @@ for code, beverage_type in urls.items():
             "name": name,
             "image": image_path,
             "beverageType": beverage_type,
+            "beverageTemperature": get_beverage_temperature(name, beverage_type),
             "beverageNutritions": {
                 "Tall": tall_nutrition
             }
