@@ -32,17 +32,25 @@ for code, beverage_type in urls.items():
         continue
 
     for item in data.get("list", []):
+        name = item.get("product_NM")
+        image_path = f"https://www.starbucks.co.kr{item.get('file_PATH', '')}"
+
+        # Tall 사이즈 정보를 기본으로 입력
+        tall_nutrition = {
+            "servingKcal": item.get("kcal"),
+            "saturatedFatG": item.get("sat_FAT"),
+            "proteinG": item.get("protein"),
+            "sodiumMg": item.get("sodium"),
+            "sugarG": item.get("sugars"),
+            "caffeineMg": item.get("caffeine")
+        }
+
         result.append({
-            "name": item.get("product_NM"),
-            "image": f"https://www.starbucks.co.kr{item.get('file_PATH', '')}",
+            "name": name,
+            "image": image_path,
             "beverageType": beverage_type,
-            "beverageNutrition": {
-                "servingKcal": item.get("kcal"),
-                "saturatedFatG": item.get("sat_FAT"),
-                "proteinG": item.get("protein"),
-                "sodiumMg": item.get("sodium"),
-                "sugarG": item.get("sugars"),
-                "caffeineMg": item.get("caffeine")
+            "beverageNutritions": {
+                "Tall": tall_nutrition
             }
         })
 
