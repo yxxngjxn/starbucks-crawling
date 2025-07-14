@@ -1,2 +1,6 @@
 # JSON 처리 및 크롤링
 requests
+
+# OCR
+pytesseract
+pillow
