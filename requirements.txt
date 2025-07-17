@@ -4,3 +4,7 @@ requests
 # OCR
 pytesseract
 pillow
+
+# FastAPI
+fastapi
+uvicorn
