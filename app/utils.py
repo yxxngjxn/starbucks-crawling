@@ -1,3 +1,5 @@
+import re
+
 def get_beverage_temperature(name: str, beverage_type: str) -> str:
     name = name.lower()
 
@@ -36,3 +38,6 @@ def get_beverage_temperature(name: str, beverage_type: str) -> str:
 
     # 조건 6. 나머지는 HOT
     return "HOT"
+
+def normalize_name(name: str) -> str:
+    return re.sub(r'\s+', '', name.lower().replace('스타벅스', '').replace(' ', ''))
