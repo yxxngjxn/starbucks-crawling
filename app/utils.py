@@ -1,3 +1,4 @@
+import unicodedata
 import re
 
 def get_beverage_temperature(name: str, beverage_type: str) -> str:
@@ -27,7 +28,7 @@ def get_beverage_temperature(name: str, beverage_type: str) -> str:
     ice_names = [
         "스파클링 시트러스 에스프레소",
         "에스프레소 플라이트 도산",
-        "스타벅스 망고 라떼"
+        "스타벅스 망고 라떼",
         "딸기 콜드폼 초콜릿",
         "딸기 콜드폼 딸기 라떼",
         "스타벅스 슬래머",
@@ -41,4 +42,9 @@ def get_beverage_temperature(name: str, beverage_type: str) -> str:
     return "HOT"
 
 def normalize_name(name: str) -> str:
-    return re.sub(r'\s+', '', name.lower().replace('스타벅스', '').replace(' ', ''))
+    if not isinstance(name, str):
+        return ''
+    name = unicodedata.normalize("NFC", name)
+    name = name.lower()
+    name = re.sub(r'\s+', '', name)
+    return name
