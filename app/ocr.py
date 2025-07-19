@@ -29,12 +29,12 @@ def get_ocr_data():
 
             if len(values) >= 6:
                 nutrition = {
-                    "servingKcal": float(values[0]),
-                    "saturatedFatG": float(values[1]),
-                    "proteinG": float(values[2]),
-                    "sodiumMg": float(values[3]),
-                    "sugarG": float(values[4]),
-                    "caffeineMg": float(values[5])
+                    "servingKcal": int(float(values[0])),
+                    "saturatedFatG": int(float(values[1])),
+                    "proteinG": int(float(values[2])),
+                    "sodiumMg": int(float(values[3])),
+                    "sugarG": int(float(values[4])),
+                    "caffeineMg": int(float(values[5]))
                 }
             else:
                 nutrition = {}
