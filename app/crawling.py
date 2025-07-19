@@ -53,7 +53,7 @@ def get_crawled_data():
                 "beverageType": beverage_type,
                 "beverageTemperature": get_beverage_temperature(name, beverage_type),
                 "beverageNutritions": {
-                    "Tall": tall_nutrition
+                    "TALL": tall_nutrition
                 }
             })
 
