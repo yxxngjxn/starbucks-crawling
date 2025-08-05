@@ -1,0 +1,8 @@
+from fastapi import FastAPI
+from app.ocr import get_ocr_data
+
+app = FastAPI()
+
+@app.get("/ocr")
+def read_ocr():
+    return get_ocr_data()
